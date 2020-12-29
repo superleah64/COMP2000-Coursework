@@ -20,12 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d18119-db2d-49aa-8c40-7530d6624f0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/COMP2000-Coursework.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kiosk.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kiosk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PaymentMethod.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Start.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Start.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lvPAGJwVKrDdu6GtGorAJ4hEjL" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -72,5 +74,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="104" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609280305412">
+      <screen x="0" y="23" width="1280" height="722" />
+    </state>
+    <state x="104" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.722@0.23.1280.722" timestamp="1609280305412" />
   </component>
 </project>
