@@ -22,7 +22,6 @@ public class Stock {
         this.stockCount = stockCount;
     }
 
-
     public String getBarcode() {
         return barcode;
     }
