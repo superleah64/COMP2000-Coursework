@@ -7,4 +7,6 @@ public class Kiosk {
     private JTextArea shoppingList;
     private JButton checkoutBtn;
     private JTextField barcode;
+    private JTextArea itemInformation;
+    private JTextField totalCost;
 }
