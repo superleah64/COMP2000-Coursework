@@ -13,5 +13,7 @@ public class Kiosk {
     // when adminBtn is clicked, display a login prompt
 
     // when checkoutBtn is clicked, open the PaymentMethod form
-
+     private void checkoutBtnActionPerformed(java.awt.event.ActionEvent event){
+        new PaymentMethod();
+     }
 }

@@ -13,7 +13,7 @@ public class Admin {
     // a popup window will appear asking how many you want
     // the database text file will be updated to represent how many you bought
 
-    // if (stock = 0
+    // if (stockNo = 0
     //  System.out.println("[itemName] is out of stock. Please replenish the stock.");
     // );
 
