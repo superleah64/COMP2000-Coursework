@@ -4,7 +4,13 @@ import java.util.*;
 public class Main {
     public static void main(String[] args){
 
-    File file = new File("resources\\stockDatabase.txt");
+
+        Start Start = new Start();
+        Start.setVisible(true);
+
+
+
+    File file = new File("/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/stockDatabase.txt");
     if (file.exists()){
         System.out.println("Name: " + file.getName());
     }

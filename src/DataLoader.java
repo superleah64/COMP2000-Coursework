@@ -1,18 +1,26 @@
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
 import java.io.*;
 import java.util.*;
 
 public class DataLoader {
 
-    public String filePath = "resources\\stockDatabase.txt";
+    public String adminPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/Login.txt";
+    public String stockPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/stockDatabase.txt";
     public String separator = "\\|";
 
-    private final ArrayList<AdminAccounts> users = new ArrayList<>();
-    private final ArrayList<Stock> stocks = new ArrayList<>();
+    private ArrayList<AdminAccounts> users = new ArrayList<>();
+    private ArrayList<Stock> stocks = new ArrayList<>();
+
+    public ArrayList<AdminAccounts> getUsers() {
+        return users;
+    }
+
+    public ArrayList<Stock> getStocks(){
+        return stocks;
+    }
 
     public void adminLoad() {
         try {
-            File file = new File(filePath);
+            File file = new File(adminPath);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()){
                 String data = scanner.nextLine();
@@ -20,8 +28,8 @@ public class DataLoader {
                 AdminAccounts adminAccounts = new AdminAccounts();
                 adminAccounts.setUsername(userData[0]);
                 adminAccounts.setPassword(userData[1]);
+                users.add(adminAccounts);
             }
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -29,7 +37,7 @@ public class DataLoader {
     }
     public void stockLoad() {
         try {
-            File file = new File(filePath);
+            File file = new File(stockPath);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()){
                 String data = scanner.nextLine();
@@ -51,7 +59,7 @@ public class DataLoader {
     // saves a new user to the database
     public void adminSave(){
         try{
-            FileWriter writer = new FileWriter(filePath);
+            FileWriter writer = new FileWriter(adminPath);
 
             for(int i = 0; i < users.size(); i++){
                 String data = "";
@@ -75,7 +83,7 @@ public class DataLoader {
 
     public void stockSave(){
         try{
-            FileWriter writer = new FileWriter(filePath);
+            FileWriter writer = new FileWriter(stockPath);
 
             for(int i = 0; i < stocks.size(); i++){
                 String data = "";
@@ -100,5 +108,12 @@ public class DataLoader {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public AdminAccounts getUserAt(int index) {
+        if (index >= users.size()) {
+            return null;
+        }
+        return users.get(index);
     }
 }

@@ -1,10 +1,32 @@
 import javax.swing.*;
+import java.awt.*;
 
-public class Admin {
+public class Admin extends JFrame {
     private JTextArea stockDatabase;
-    private JPanel panel1;
+    private JPanel mainPanel;
     private JButton orderBtn;
-    private JButton button2;
+    private JButton editBtn;
+    private JButton addBtn;
+    private JTextField nameTxt;
+    private JTextField countTxt;
+    private JTextField priceTxt;
+    private JButton removeBtn;
+
+    public Admin(){
+        setContentPane(mainPanel);
+        setPreferredSize(new Dimension(800,800));
+        pack();
+    }
+
+//    editBtn.addActionListener(
+//            new ActionListener(){
+//                @Override
+//                        public void actionPerformed(ActionEvent e){
+//                    String newName = nameTxt.getText();
+//
+//        }
+//     }
+//    );
 
     // if ( text is selected in stockDatabase
     // orderBtn.setEnabled(true)

@@ -1,6 +1,9 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Kiosk {
+public class Kiosk extends JFrame{
     private JButton adminBtn;
     private JButton addBtn;
     private JButton removeBtn;
@@ -9,11 +12,27 @@ public class Kiosk {
     private JTextField barcode;
     private JTextArea itemInformation; //displays the information of the scanned item
     private JTextField totalCost;
+    private JPanel Kiosk;
 
-    // when adminBtn is clicked, display a login prompt
+     public Kiosk(){
+         setContentPane(Kiosk);
+         setPreferredSize(new Dimension(800,800));
+         pack();
 
-    // when checkoutBtn is clicked, open the PaymentMethod form
-     private void checkoutBtnActionPerformed(java.awt.event.ActionEvent event){
-        new PaymentMethod();
+         adminBtn.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                Login login = new Login();
+                login.setVisible(true);
+             }
+         });
+
+         checkoutBtn.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent e) {
+                 PaymentMethod paymentMethod = new PaymentMethod();
+                 paymentMethod.setVisible(true);
+             }
+         });
      }
 }

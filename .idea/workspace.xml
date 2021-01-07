@@ -20,16 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d18119-db2d-49aa-8c40-7530d6624f0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/Login.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AdminAccounts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Login.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/stockDatabase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stockDatabase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Admin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kiosk.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kiosk.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kiosk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kiosk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaymentMethod.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentMethod.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,14 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="COMP2000-Coursework" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Unnamed" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="COMP2000-Coursework" />
       <option name="MAIN_CLASS_NAME" value="" />
@@ -80,6 +90,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
