@@ -8,7 +8,7 @@ public class PaymentMethod extends JFrame {
 
     public PaymentMethod(){
         setContentPane(paymentmethod);
-        setPreferredSize(new Dimension(800,800));
+        setPreferredSize(new Dimension(800,400));
         pack();
     }
 }

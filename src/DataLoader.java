@@ -8,12 +8,11 @@ public class DataLoader {
     public String separator = "\\|";
 
     private ArrayList<AdminAccounts> users = new ArrayList<>();
-    private ArrayList<Stock> stocks = new ArrayList<>();
+    public ArrayList<Stock> stocks = new ArrayList<>();
 
     public ArrayList<AdminAccounts> getUsers() {
         return users;
     }
-
     public ArrayList<Stock> getStocks(){
         return stocks;
     }
@@ -46,14 +45,15 @@ public class DataLoader {
                 stock.setProductName(userData[0]);
                 int stockCountToInt = Integer.parseInt(userData[1]);
                 stock.setStockCount(stockCountToInt);
-                int priceToInt = Integer.parseInt(userData[2]);
-                stock.setPrice(priceToInt);
+                float priceToFloat = Float.parseFloat(userData[2]);
+                stock.setPrice(priceToFloat);
+                stocks.add(stock);
             }
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        System.out.println("data loaded");
     }
 
     // saves a new user to the database
@@ -97,7 +97,7 @@ public class DataLoader {
                 String stockCountToString = Integer.toString(stocks.get(i).getStockCount());
                 data += "|" + stockCountToString;
 
-                String priceToString = Integer.toString(stocks.get(i).getPrice());
+                String priceToString = Float.toString(stocks.get(i).getPrice());
                 data += "|" + priceToString;
 
                 writer.write(data);

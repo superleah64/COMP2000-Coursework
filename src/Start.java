@@ -11,7 +11,7 @@ public class Start extends JFrame{
     public Start(){
 
         setContentPane(panel1);
-        setPreferredSize(new Dimension(800, 800));
+        setPreferredSize(new Dimension(800, 400));
         pack();
 
         startBtn.addActionListener(new ActionListener() {

@@ -1,5 +1,5 @@
-beans|35|£0.50
-milk|68|£1.20
-bananas|42|£3.90
-tomatoes|63|£0.40
-rice|51|£0.80
+beans|35|0.50
+milk|68|1.20
+bananas|42|3.90
+tomatoes|63|0.40
+rice|51|0.80

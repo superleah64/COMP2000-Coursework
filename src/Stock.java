@@ -3,7 +3,7 @@ import java.util.Currency;
 public class Stock {
     private String productName;
     private String barcode;
-    private int price;
+    private float price;
     private int stockCount;
 
     public String getProductName() {
@@ -22,11 +22,11 @@ public class Stock {
         this.stockCount = stockCount;
     }
 
-    public int getPrice(){
+    public float getPrice(){
         return price;
     }
 
-    public void setPrice(int price){
+    public void setPrice(float price){
         this.price = price;
     }
 }

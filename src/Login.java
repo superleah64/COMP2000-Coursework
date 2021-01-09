@@ -2,13 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Login extends JFrame {
     private JTextField usernameTxt;
     private JTextField passwordTxt;
-    private JButton btnSubmit;
+    private JButton loginBtn;
     private JPanel login;
 
     private ArrayList<AdminAccounts> users = new ArrayList<>();
@@ -19,17 +18,17 @@ public class Login extends JFrame {
 
     public Login() {
         setContentPane(login);
-        setPreferredSize(new Dimension(800, 800));
+        setPreferredSize(new Dimension(800, 400));
         pack();
 
-        btnSubmit.addActionListener(new ActionListener() {
+        loginBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                DataLoader dl = new DataLoader();
-                dl.adminLoad();
+                DataLoader data = new DataLoader();
+                data.adminLoad();
 
-                setUsers(dl.getUsers());
+                setUsers(data.getUsers());
 
                 AdminAccounts temp = new AdminAccounts();
                 temp.setUsername(usernameTxt.getText());

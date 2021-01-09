@@ -8,8 +8,6 @@ public class Main {
         Start Start = new Start();
         Start.setVisible(true);
 
-
-
     File file = new File("/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/stockDatabase.txt");
     if (file.exists()){
         System.out.println("Name: " + file.getName());

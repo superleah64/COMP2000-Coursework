@@ -14,7 +14,7 @@ public class Admin extends JFrame {
 
     public Admin(){
         setContentPane(mainPanel);
-        setPreferredSize(new Dimension(800,800));
+        setPreferredSize(new Dimension(800,400));
         pack();
     }
 

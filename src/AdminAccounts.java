@@ -2,6 +2,7 @@ public class AdminAccounts {
     String username;
     String password;
 
+    // getters and setters for the username and password
     public String getUsername() {
         return username;
     }
