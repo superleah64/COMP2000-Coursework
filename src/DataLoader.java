@@ -1,15 +1,18 @@
 import java.io.*;
 import java.util.*;
 
+// a class for creating arrays and loading them into files when called
 public class DataLoader {
 
     public String adminPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/Login.txt";
     public String stockPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/stockDatabase.txt";
     public String separator = "\\|";
 
+    // creates arraylists for the admin and the stock
     private ArrayList<AdminAccounts> users = new ArrayList<>();
     public ArrayList<Stock> stocks = new ArrayList<>();
 
+    // gets and sets those arrays
     public ArrayList<AdminAccounts> getUsers() {
         return users;
     }
@@ -17,6 +20,7 @@ public class DataLoader {
         return stocks;
     }
 
+    // loads the users array into the new file
     public void adminLoad() {
         try {
             File file = new File(adminPath);
@@ -34,6 +38,8 @@ public class DataLoader {
             e.printStackTrace();
         }
     }
+
+    // loads the stock array into the new file
     public void stockLoad() {
         try {
             File file = new File(stockPath);
@@ -81,6 +87,7 @@ public class DataLoader {
         }
     }
 
+    // saves a new item to the database
     public void stockSave(){
         try{
             FileWriter writer = new FileWriter(stockPath);

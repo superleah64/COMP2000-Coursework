@@ -10,8 +10,10 @@ public class Login extends JFrame {
     private JButton loginBtn;
     private JPanel login;
 
+    // created a copy of the adminAccounts array from DataLoader
     private ArrayList<AdminAccounts> users = new ArrayList<>();
 
+    // set the array
     public void setUsers(ArrayList<AdminAccounts> users) {
         this.users = users;
     }
@@ -34,6 +36,7 @@ public class Login extends JFrame {
                 temp.setUsername(usernameTxt.getText());
                 temp.setPassword(passwordTxt.getText());
 
+                // if the username and password combination both match with one in the database, the admin form is opened
                 try {
                     for (int i = 0; i < users.size(); i++) {
                         if (users.get(i).getUsername().equals(temp.getUsername())) {
@@ -41,7 +44,6 @@ public class Login extends JFrame {
 
                                 Admin admin = new Admin();
                                 admin.setVisible(true);
-
                             }
                         }
                     }
