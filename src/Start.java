@@ -21,13 +21,7 @@ public class Start extends JFrame{
                 Kiosk kiosk = new Kiosk();
                 kiosk.setVisible(true);
                 setVisible(false);
-
             }
         });
     }
-
-
-
-
-
 }

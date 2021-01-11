@@ -20,7 +20,7 @@ public class Login extends JFrame {
 
     public Login() {
         setContentPane(login);
-        setPreferredSize(new Dimension(800, 400));
+        setPreferredSize(new Dimension(500, 300));
         pack();
 
         loginBtn.addActionListener(new ActionListener() {
@@ -48,7 +48,7 @@ public class Login extends JFrame {
                         }
                     }
                 } catch (IndexOutOfBoundsException exception) {
-                    System.out.println("Username or password incorrect. Please try again.");
+                    JOptionPane.showMessageDialog(null,"Username or password incorrect. Please try again.");
                 }
             }
         });

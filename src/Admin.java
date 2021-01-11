@@ -32,7 +32,7 @@ public class Admin extends JFrame {
     // orderBtn.setEnabled(true)
     // );
 
-    // a popup window will appear asking how many you want
+    // a popup window will appear asking how many you want - JOptionPane.setInputDialog
     // the database text file will be updated to represent how many you bought
 
     // if (stockNo = 0

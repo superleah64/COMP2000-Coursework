@@ -24,7 +24,7 @@ public class Kiosk extends JFrame{
         this.stocks = stocks;
     }
 
-    float currentTotal = 0;
+    public static float currentTotal = 0;
 
     // sets up the dimensions of the new Kiosk form and loads the stock data into it when called
      public Kiosk(){
@@ -59,8 +59,15 @@ public class Kiosk extends JFrame{
          checkoutBtn.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                 PaymentMethod paymentMethod = new PaymentMethod();
-                 paymentMethod.setVisible(true);
+
+                 // prevents the customer from checking out with an empty basket
+                 if (shoppingList.getText().trim().length() == 0) {
+                     JOptionPane.showMessageDialog(null, "Basket is empty. Please add items before proceeding to checkout.");
+                 }
+                 else {
+                     PaymentMethod paymentMethod = new PaymentMethod();
+                     paymentMethod.setVisible(true);
+                 }
              }
          });
 
@@ -82,37 +89,38 @@ public class Kiosk extends JFrame{
                              currentTotal = total + currentTotal;
                              totalLbl.setText("£" + String.valueOf(decimal.format(currentTotal)));
 
-                                // if the customer adds more than is in stock, an error message will be displayed
-                                if(stocks.get(i).getBasketCount() >= stocks.get(i).getStockCount()){
-                                    JOptionPane.showInputDialog(null,"Item out of stock.");
-                                }else{
-                                    // if not, it will add the item and if it matches an item already in the basket, it will add 1 to the count
-                                    int newbasketitem = stocks.get(i).getBasketCount();
-                                    stocks.get(i).setBasketCount(newbasketitem+1);
+                             // if the customer adds more than is in stock, an error message will be displayed
+                             if(stocks.get(i).getBasketCount() >= stocks.get(i).getStockCount()){
+                                 JOptionPane.showMessageDialog(null,"You have exceeded the amount of " + temp.getProductName() + " in stock. You cannot add any more.");
+                             }else{
+                                 // if not, it will add the item and if it matches an item already in the basket, it will add 1 to the count
+                                 int newBasketItem = stocks.get(i).getBasketCount();
+                                 stocks.get(i).setBasketCount(newBasketItem + 1);
                                 }
 
-                                for(int x = 0; x < stocks.size(); x++){
+                             for(int x = 0; x < stocks.size(); x++){
 
-                                    if(stocks.get(x).getBasketCount()>0){
+                                 if(stocks.get(x).getBasketCount()>0){
 
-                                        shoppingList.append(
-
-                                                stocks.get(x).getProductName()
-                                                +" x "
-                                                + stocks.get(x).getBasketCount()
-                                                +" ...... £"
-                                                +decimal.format(stocks.get(x).getBasketCount() * stocks.get(x).getPrice())
-                                                +"\n"
-                                        );
-
-                                    }
-                                }
+                                     shoppingList.append(
+                                        stocks.get(x).getProductName()
+                                        +" x "
+                                        + stocks.get(x).getBasketCount()
+                                        +" ...... £"
+                                        +decimal.format(stocks.get(x).getBasketCount() * stocks.get(x).getPrice())
+                                        +"\n"
+                                     );
+                                 }
+                             }
+                         }
+                         else{
+                             // JOptionPane.showMessageDialog(null, "Invalid code. Please try again.")
                          }
 
                          }
                      }
                  catch (IndexOutOfBoundsException exception) {
-                     System.out.println("Invalid code, please try again.");
+
                  }
                  }
          });
