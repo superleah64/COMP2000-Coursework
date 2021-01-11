@@ -5,6 +5,15 @@ public class Stock {
     private String barcode;
     private float price;
     private int stockCount;
+    private int basketcount;
+
+    public int getBasketcount(){
+        return  basketcount;
+    }
+
+    public void setBasketcount(int basketcount){
+        this.basketcount = basketcount;
+    }
 
     public String getProductName() {
         return productName;

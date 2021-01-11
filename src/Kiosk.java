@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Kiosk extends JFrame{
     private JButton adminBtn;
@@ -17,7 +18,7 @@ public class Kiosk extends JFrame{
     public static DecimalFormat decimal = new DecimalFormat("0.00");
 
     public ArrayList<Stock> stocks = new ArrayList();
-    public ArrayList<itemCount> itemCounts = new ArrayList();
+
 
     public void setStocks(ArrayList<Stock> stocks){
         this.stocks = stocks;
@@ -37,6 +38,14 @@ public class Kiosk extends JFrame{
          codeTxt.grabFocus();
 
          setStocks(data.getStocks());
+
+         for(int reset = 0; reset <stocks.size(); reset++){
+
+             stocks.get(reset).setBasketcount(0);
+             
+
+
+         };
 
          adminBtn.addActionListener(new ActionListener() {
              @Override
@@ -68,45 +77,54 @@ public class Kiosk extends JFrame{
                          if (stocks.get(i).getProductName().equals(temp.getProductName())) {
                              // add to jTextArea
 
+
+
+
+                             shoppingList.setText("");
+
                              float total = stocks.get(i).getPrice();
 
-                             shoppingList.append(temp.getProductName() + " ..... £" + decimal.format(total) + "\n");
+
                              currentTotal = total + currentTotal;
 
 
                              totalLbl.setText("£" + String.valueOf(decimal.format(currentTotal)));
 
 
-                             itemCount tempitem = new itemCount();
-                             tempitem.setStock(stocks.get(i));
-                             tempitem.setItemCount(0);
-                             itemCounts.add(tempitem);
-
-
-                             for (int x = 0; x < itemCounts.size(); x++) {
-
-                                 if ((itemCounts.get(x).getStock().getProductName().equals(stocks.get(i).getProductName()))) {
-
-                                     int currentitemcount = itemCounts.get(x).getItemCount();
-
-                                     itemCounts.remove(itemCounts.get(x));
-
-                                     itemCount newtempitem = new itemCount();
-                                     newtempitem.setStock(stocks.get(i));
-                                     newtempitem.setItemCount(0);
-                                     itemCounts.add(newtempitem);
-
-                                     itemCounts.get(x).setItemCount(currentitemcount + 1);
-
-                                     System.out.println(itemCounts.get(x).getItemCount());
-                                     break;
-
-
-                                 }
 
 
 
-                             }
+                                if(stocks.get(i).getBasketcount() >= stocks.get(i).getStockCount()){
+
+                                    JOptionPane.showInputDialog(null,"no more in stock");
+
+                                }else{
+
+                                    int newbasketitem = stocks.get(i).getBasketcount();
+                                    stocks.get(i).setBasketcount(newbasketitem+1);
+                                }
+
+
+
+
+
+                                for(int x = 0; x < stocks.size(); x++){
+
+                                    if(stocks.get(x).getBasketcount()>0){
+
+                                        shoppingList.append(
+
+                                                stocks.get(x).getProductName()
+                                                +" x "
+                                                + stocks.get(x).getBasketcount()
+                                                +" ...... £"
+                                                +decimal.format(stocks.get(x).getBasketcount() * stocks.get(x).getPrice())
+                                                +"\n"
+                                        );
+
+                                    }
+                                }
+
 
                          }
 
