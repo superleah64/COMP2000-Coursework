@@ -2,7 +2,6 @@ import java.util.Currency;
 
 public class Stock {
     private String productName;
-    private String barcode;
     private float price;
     private int stockCount;
     private int basketCount;

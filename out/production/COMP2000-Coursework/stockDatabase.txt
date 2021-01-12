@@ -1,5 +1,8 @@
 beans|3|0.50
-milk|5|1.20
-bananas|7|3.90
+milk|42|1.20
+bananas|5|0.70
 tomatoes|2|0.40
 rice|8|0.80
+pasta|12|2.50
+sugar|9|1.40
+bread|4|0.30

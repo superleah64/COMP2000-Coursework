@@ -7,6 +7,7 @@ public class PaymentMethod extends JFrame {
     private JButton cashBtn;
     private JButton cardBtn;
     private JPanel paymentMethod;
+    public static Object thisWindow;
 
     public PaymentMethod(){
         setContentPane(paymentMethod);

@@ -8,6 +8,8 @@ public class CardVerification extends JFrame {
     private JButton acceptBtn;
     private JButton denyBtn;
 
+    public static Object cardForm;
+
     public CardVerification() {
         setContentPane(verification);
         setPreferredSize(new Dimension(800, 400));
@@ -16,8 +18,8 @@ public class CardVerification extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null,"Transaction complete. Your receipt will now be printed.");
-                Receipt receipt = new Receipt();
-                receipt.setVisible(true);
+                CardThread cardThread = new CardThread();
+                cardThread.run();
             }
         });
         denyBtn.addActionListener(new ActionListener() {

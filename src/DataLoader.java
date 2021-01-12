@@ -59,7 +59,6 @@ public class DataLoader {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        System.out.println("data loaded");
     }
 
     // saves a new user to the database
