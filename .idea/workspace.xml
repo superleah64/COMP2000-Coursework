@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="COMP2000-Coursework:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,24 +25,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d18119-db2d-49aa-8c40-7530d6624f0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CardThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CashThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/COMP2000_Coursework_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/Login.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/stockDatabase.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP2000-Coursework/stockDatabase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/COMP2000-Coursework/stockDatabase.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/stockDatabase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stockDatabase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP2000-Coursework/Login.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/COMP2000-Coursework/stockDatabase.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Login.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/stockDatabase.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardVerification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CashPayment.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashPayment.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CashPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Kiosk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kiosk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Receipt.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Receipt.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Start.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/Start.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Stock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,9 +77,10 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="168" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="208" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>

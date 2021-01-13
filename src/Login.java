@@ -44,6 +44,7 @@ public class Login extends JFrame {
 
                                 Admin admin = new Admin();
                                 admin.setVisible(true);
+                                break;
                             }
                         }
                     }

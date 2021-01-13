@@ -77,7 +77,8 @@ public class Kiosk extends JFrame{
 
                  // creates a temporary version of the code typed in
                  Stock temp = new Stock();
-                 temp.setProductName(codeTxt.getText());
+                 temp.setBarcode(codeTxt.getText());
+                 boolean error = false;
 
                  // if the item code matches a code in the database it will add it to the shoppingList
                  try {
@@ -87,7 +88,7 @@ public class Kiosk extends JFrame{
                          for (int i = 0; i < stocks.size(); i++){
 
                          // if the code typed in is equal to a product name from the array, it will add it to the basket
-                             if (stocks.get(i).getProductName().equals(temp.getProductName())) {
+                             if (stocks.get(i).getBarcode().equals(temp.getBarcode())) {
                              shoppingList.setText("");
                              float total = stocks.get(i).getPrice();
                              currentTotal = total + currentTotal;
@@ -95,7 +96,7 @@ public class Kiosk extends JFrame{
 
                              // if the customer adds more than is in stock, an error message will be displayed
                                 if(stocks.get(i).getBasketCount() >= stocks.get(i).getStockCount()) {
-                                 JOptionPane.showMessageDialog(null,"You have exceeded the amount of " + temp.getProductName() + " in stock. You cannot add any more.");
+                                 JOptionPane.showMessageDialog(null,"You have exceeded the amount of " + temp.getBarcode() + " in stock. You cannot add any more.");
                                 }
                                 else {
                                     // if not, it will add the item and if it matches an item already in the basket, it will add 1 to the count
@@ -115,9 +116,9 @@ public class Kiosk extends JFrame{
                                          +"\n");
                                      }
                                  }
+                                 break;
                              }
                          }
-                     //JOptionPane.showMessageDialog(null,"Invalid code. Please try again.");
                      }
                  catch (IndexOutOfBoundsException exception) {
 

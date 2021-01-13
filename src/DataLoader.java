@@ -4,16 +4,16 @@ import java.util.*;
 // a class for creating arrays and loading them into files when called
 public class DataLoader {
 
-    public String adminPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/Login.txt";
-    public String stockPath = "/Users/leahhumphries/Documents/GitHub/COMP2000-Coursework/resources/stockDatabase.txt";
-    public String separator = "\\|";
+    public static String adminPath = "src/resources/Login.txt";
+    public static String stockPath = "src/resources/stockDatabase.txt";
+    public static String separator = "\\|";
 
     // creates arraylists for the admin and the stock
-    private ArrayList<AdminAccounts> users = new ArrayList<>();
-    public ArrayList<Stock> stocks = new ArrayList<>();
+    private static ArrayList<AdminAccounts> users = new ArrayList<>();
+    public static ArrayList<Stock> stocks = new ArrayList<>();
 
     // gets and sets those arrays
-    public ArrayList<AdminAccounts> getUsers() {
+    public static ArrayList<AdminAccounts> getUsers() {
         return users;
     }
     public ArrayList<Stock> getStocks(){
@@ -21,7 +21,7 @@ public class DataLoader {
     }
 
     // loads the users array into the new file
-    public void adminLoad() {
+    public static void adminLoad() {
         try {
             File file = new File(adminPath);
             Scanner scanner = new Scanner(file);
@@ -40,7 +40,7 @@ public class DataLoader {
     }
 
     // loads the stock array into the new file
-    public void stockLoad() {
+    public static void stockLoad() {
         try {
             File file = new File(stockPath);
             Scanner scanner = new Scanner(file);
@@ -53,6 +53,9 @@ public class DataLoader {
                 stock.setStockCount(stockCountToInt);
                 float priceToFloat = Float.parseFloat(userData[2]);
                 stock.setPrice(priceToFloat);
+                stock.setBarcode(userData[3]);
+
+
                 stocks.add(stock);
             }
 
@@ -61,33 +64,8 @@ public class DataLoader {
         }
     }
 
-    // saves a new user to the database
-    public void adminSave(){
-        try{
-            FileWriter writer = new FileWriter(adminPath);
-
-            for(int i = 0; i < users.size(); i++){
-                String data = "";
-
-                if(i > 0){
-                    data += "\n";
-                }
-
-                data += users.get(i).getUsername();
-                data += users.get(i).getPassword();
-
-                writer.write(data);
-            }
-            writer.close();
-            System.out.println("Admin database successfully saved.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     // saves a new item to the database
-    public void stockSave(){
+    public static void stockSave(){
         try{
             FileWriter writer = new FileWriter(stockPath);
 
@@ -106,6 +84,8 @@ public class DataLoader {
                 String priceToString = Float.toString(stocks.get(i).getPrice());
                 data += "|" + priceToString;
 
+                data += "|" + stocks.get(i).getBarcode();
+
                 writer.write(data);
             }
             writer.close();
@@ -116,10 +96,10 @@ public class DataLoader {
         }
     }
 
-    public AdminAccounts getUserAt(int index) {
+    public Stock getStockAt(int index) {
         if (index >= users.size()) {
             return null;
         }
-        return users.get(index);
+        return stocks.get(index);
     }
 }

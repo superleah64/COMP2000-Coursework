@@ -2,7 +2,6 @@ import java.text.DecimalFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-
 // this thread is run when the customer pays by card
 // it is the same as the cash thread but does not display change
 

@@ -14,7 +14,6 @@ public class Admin extends JFrame {
     private JTextField addNameTxt;
     private JTextField addCountTxt;
     private JTextField editNameTxt;
-    private JTextField editCountTxt;
     private JTextField editPriceTxt;
     private JTextField removeTxt;
     private JPanel removePanel;
@@ -22,23 +21,31 @@ public class Admin extends JFrame {
     private JButton orderSaveBtn;
     private JButton editSaveBtn;
     private JButton removeSaveBtn;
+    private JTextField editBarcodeTxt;
 
     public static DecimalFormat decimal = new DecimalFormat("0.00");
 
+    String tempName;
+    String tempPrice;
+    String tempBarcode;
+
     public Admin(){
+        DataLoader dataLoader = new DataLoader();
+        dataLoader.adminLoad();
+
         setContentPane(mainPanel);
         setPreferredSize(new Dimension(800,400));
         pack();
 
         for (int i = 0; i < Kiosk.stocks.size(); i++) {
             if (Kiosk.stocks.get(i).getStockCount() == 0) {
-                JOptionPane.showMessageDialog(null, "Please order more " + Kiosk.stocks.get(i).getProductName() + " as we are out of stock.");
+                JOptionPane.showMessageDialog(null, "Please order more " + Kiosk.stocks.get(i).getBarcode() + " as we are out of stock.");
             }
         }
 
         for (int i = 0; i < Kiosk.stocks.size(); i++){
             stockDatabase.append(
-            Kiosk.stocks.get(i).getProductName() + " | " +
+            Kiosk.stocks.get(i).getBarcode() + " | " +
             Kiosk.stocks.get(i).getStockCount() + " | " + "£" +
             decimal.format(Kiosk.stocks.get(i).getPrice()) + "\n"
             );
@@ -53,10 +60,10 @@ public class Admin extends JFrame {
                 pack();
 
                 Stock temp = new Stock();
-                temp.setProductName(addNameTxt.getText());
+                temp.setBarcode(addNameTxt.getText());
 
                 for (int i = 0; i < Kiosk.stocks.size(); i++){
-                    if (Kiosk.stocks.get(i).getProductName().equals(temp.getProductName())) {
+                    if (Kiosk.stocks.get(i).getBarcode().equals(temp.getBarcode())) {
 
                     }
                 }
@@ -69,6 +76,12 @@ public class Admin extends JFrame {
                 setPreferredSize(new Dimension(400,200));
                 editPanel.setVisible(true);
                 pack();
+
+                DataLoader dataLoader = new DataLoader();
+                tempName = editNameTxt.getText();
+                tempPrice = editPriceTxt.getText();
+                tempBarcode = editBarcodeTxt.getText();
+                
             }
         });
         removeBtn.addActionListener(new ActionListener() {

@@ -5,6 +5,7 @@ public class Stock {
     private float price;
     private int stockCount;
     private int basketCount;
+    private String barcode;
 
     // getters and setters for the stock details
 
@@ -16,12 +17,12 @@ public class Stock {
         this.basketCount = basketcount;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getBarcode() {
+        return barcode;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
     }
 
     public int getStockCount() {
@@ -38,5 +39,13 @@ public class Stock {
 
     public void setPrice(float price){
         this.price = price;
+    }
+
+    public String getProductName(){
+        return productName;
+    }
+
+    public void setProductName(String name){
+        this .productName=name;
     }
 }
