@@ -23,7 +23,7 @@ public class Admin extends JFrame {
     private JButton addSaveBtn;
     private JButton editSaveBtn;
     private JButton removeSaveBtn;
-    private JTextField barcodeTxt;
+    private JTextField editBarcodeTxt;
     private JTextField addPriceTxt;
     private JTextField addBarcodeTxt;
     private JButton orderBtn;
@@ -32,11 +32,9 @@ public class Admin extends JFrame {
     private JTextField orderStockTxt;
     private JButton orderSaveBtn;
 
-
     public static DecimalFormat decimal = new DecimalFormat("0.00");
 
     public static ArrayList<Stock> stockAdmin = new ArrayList();
-
 
     public static ArrayList<Stock> getStockAdmin() {
 
@@ -60,7 +58,6 @@ public class Admin extends JFrame {
 
         setStockArray(DataLoader.stocks);
         System.out.println("stop");
-
 
         // displays a message if an item has run out of stock
         for (int i = 0; i < Kiosk.stocks.size(); i++) {
@@ -135,14 +132,12 @@ public class Admin extends JFrame {
             }
         });
 
+        // orders new stock of an existing item and writes back to the text file
         orderSaveBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
                 for (int i = 0; i < stockAdmin.size(); i++){
-
-
 
                         if (DataLoader.stocks.get(i).getBarcode().equals(orderBarcodeTxt.getText())){
 
@@ -154,46 +149,42 @@ public class Admin extends JFrame {
                     }
                 JOptionPane.showMessageDialog(null,"Stock added successfully.");
                 stockSave();
-
-
             }
         });
 
+        // edits existing item and writes back to the text file
         editSaveBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                DataLoader dataLoader = new DataLoader();
-                Stock temp = new Stock();
-                temp.setBarcode(barcodeTxt.getText());
-                tempName = editNameTxt.getText();
-                tempPrice = Float.parseFloat(editPriceTxt.getText());
+
+                for (int i = 0; i < stockAdmin.size(); i++){
+
+                    if (DataLoader.stocks.get(i).getBarcode().equals(editBarcodeTxt.getText())){
 
 
-                for (int i = 0; i < stockAdmin.size(); i++) {
-                    if (stockAdmin.get(i).getBarcode().equals(temp.getBarcode())) {
-                        Stock stock = dataLoader.getStockAt(Integer.parseInt(tempBarcode));
-                        stock.setProductName(tempName);
-                        stock.setPrice(Float.parseFloat(decimal.format(tempPrice)));
+                        stockAdmin.get(i).setProductName(editNameTxt.getText());
+                        stockAdmin.get(i).setPrice(Float.parseFloat(String.valueOf(editPriceTxt.getText())));
+                        break;
                     }
                 }
-                JOptionPane.showMessageDialog(null,"Item successfully edited.");
+                JOptionPane.showMessageDialog(null,"Item edited successfully.");
                 stockSave();
             }
         });
 
+        // removes selected item from the array and writes back to the text file
         removeSaveBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Stock temp = new Stock();
-                temp.setBarcode(removeTxt.getText());
+                for (int i = 0; i < stockAdmin.size(); i++){
 
-                for (int i = 0; i < DataLoader.stocks.size(); i++){
-                    if (DataLoader.stocks.get(i).getBarcode().equals(temp.getBarcode())) {
-
-                        // remove the selected item from the database
+                    if (DataLoader.stocks.get(i).getBarcode().equals(removeTxt.getText())){
+                        stockAdmin.remove(stockAdmin.get(i));
+                        break;
                     }
                 }
+                JOptionPane.showMessageDialog(null,"Item removed successfully.");
                 stockSave();
             }
         });
@@ -223,7 +214,6 @@ public class Admin extends JFrame {
                 data += "|" + stockAdmin.get(i).getBarcode();
 
                 fileWriter.write(data);
-
             }
             fileWriter.close();
 
@@ -233,9 +223,7 @@ public class Admin extends JFrame {
             e.printStackTrace();
         }
 
-        DataLoader newloader = new DataLoader();
-        newloader.setStock(stockAdmin);
-
+        DataLoader newLoader = new DataLoader();
+        newLoader.setStock(stockAdmin);
     }
-
 }
