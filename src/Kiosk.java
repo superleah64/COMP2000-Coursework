@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -19,6 +21,8 @@ public class Kiosk extends JFrame{
 
     // creates and sets a copy of the stock array from the DataLoader class
     public static ArrayList<Stock> stocks = new ArrayList();
+
+
     public void setStocks(ArrayList<Stock> stocks){
         this.stocks = stocks;
     }
@@ -26,18 +30,15 @@ public class Kiosk extends JFrame{
     public static float currentTotal = 0;
 
     // sets up the dimensions of the new Kiosk form and loads the stock data into it when called
-     public Kiosk(){
+     public Kiosk() throws IOException {
          setContentPane(Kiosk);
          setPreferredSize(new Dimension(800,400));
          pack();
-         DataLoader stock = new DataLoader();
-         stock.stockLoad();
-         setStocks(stock.getStocks());
-         DataLoader data = new DataLoader();
-         data.stockLoad();
+
+
          codeTxt.grabFocus();
 
-         setStocks(data.getStocks());
+         setStocks(DataLoader.getStocks());
 
          // resets the number of items in basket to 0
          for(int reset = 0; reset <stocks.size(); reset++){
@@ -54,22 +55,6 @@ public class Kiosk extends JFrame{
              }
          });
 
-         // opens the PaymentMethod form when the checkout button is clicked
-         checkoutBtn.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-
-                 // prevents the customer from checking out with an empty basket
-                 if (shoppingList.getText().trim().length() == 0) {
-                     JOptionPane.showMessageDialog(null, "Basket is empty. Please add items before proceeding to checkout.");
-                 }
-                 else {
-                     PaymentMethod paymentMethod = new PaymentMethod();
-                     paymentMethod.setVisible(true);
-                 }
-             }
-         });
-
          // adds the item to the shopping list if the code is correct
          addBtn.addActionListener(new ActionListener() {
              @Override
@@ -78,6 +63,7 @@ public class Kiosk extends JFrame{
                  // creates a temporary version of the code typed in
                  Stock temp = new Stock();
                  temp.setBarcode(codeTxt.getText());
+
                  boolean error = false;
 
                  // if the item code matches a code in the database it will add it to the shoppingList
@@ -96,7 +82,7 @@ public class Kiosk extends JFrame{
 
                              // if the customer adds more than is in stock, an error message will be displayed
                                 if(stocks.get(i).getBasketCount() >= stocks.get(i).getStockCount()) {
-                                 JOptionPane.showMessageDialog(null,"You have exceeded the amount of " + temp.getBarcode() + " in stock. You cannot add any more.");
+                                 JOptionPane.showMessageDialog(null,"You have exceeded the amount of " + stocks.get(i).getProductName() + " in stock. You cannot add any more.");
                                 }
                                 else {
                                     // if not, it will add the item and if it matches an item already in the basket, it will add 1 to the count
@@ -122,6 +108,22 @@ public class Kiosk extends JFrame{
                      }
                  catch (IndexOutOfBoundsException exception) {
 
+                 }
+             }
+         });
+
+         // opens the PaymentMethod form when the checkout button is clicked
+         checkoutBtn.addActionListener(new ActionListener() {
+             @Override
+             public void actionPerformed(ActionEvent event) {
+
+                 // prevents the customer from checking out with an empty basket
+                 if (shoppingList.getText().trim().length() == 0) {
+                     JOptionPane.showMessageDialog(null, "Basket is empty. Please add items before proceeding to checkout.");
+                 }
+                 else {
+                     PaymentMethod paymentMethod = new PaymentMethod();
+                     paymentMethod.setVisible(true);
                  }
              }
          });

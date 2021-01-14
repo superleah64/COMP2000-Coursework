@@ -16,12 +16,16 @@ public class DataLoader {
     public static ArrayList<AdminAccounts> getUsers() {
         return users;
     }
-    public ArrayList<Stock> getStocks(){
+    public static ArrayList<Stock> getStocks(){
         return stocks;
     }
 
+    public void setStock(ArrayList<Stock> stock){
+        this.stocks = stock;
+    }
+
     // loads the users array into the new file
-    public static void adminLoad() {
+    public void adminLoad() {
         try {
             File file = new File(adminPath);
             Scanner scanner = new Scanner(file);
@@ -40,13 +44,13 @@ public class DataLoader {
     }
 
     // loads the stock array into the new file
-    public static void stockLoad() {
+    public void stockLoad() {
         try {
             File file = new File(stockPath);
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 String data = scanner.nextLine();
-                String[]userData = data.split(separator);
+                String[] userData = data.split(separator);
                 Stock stock = new Stock();
                 stock.setProductName(userData[0]);
                 int stockCountToInt = Integer.parseInt(userData[1]);
@@ -55,43 +59,9 @@ public class DataLoader {
                 stock.setPrice(priceToFloat);
                 stock.setBarcode(userData[3]);
 
-
                 stocks.add(stock);
             }
-
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // saves a new item to the database
-    public static void stockSave(){
-        try{
-            FileWriter writer = new FileWriter(stockPath);
-
-            for(int i = 0; i < stocks.size(); i++){
-                String data = "";
-
-                if(i > 0){
-                    data += "\n";
-                }
-
-                data += stocks.get(i).getProductName();
-
-                String stockCountToString = Integer.toString(stocks.get(i).getStockCount());
-                data += "|" + stockCountToString;
-
-                String priceToString = Float.toString(stocks.get(i).getPrice());
-                data += "|" + priceToString;
-
-                data += "|" + stocks.get(i).getBarcode();
-
-                writer.write(data);
-            }
-            writer.close();
-            System.out.println("Stock database successfully saved.");
-
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }

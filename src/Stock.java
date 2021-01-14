@@ -13,8 +13,8 @@ public class Stock {
         return  basketCount;
     }
 
-    public void setBasketCount(int basketcount){
-        this.basketCount = basketcount;
+    public void setBasketCount(int basketCount){
+        this.basketCount = basketCount;
     }
 
     public String getBarcode() {

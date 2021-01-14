@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,11 +15,19 @@ public class Start extends JFrame{
         setPreferredSize(new Dimension(800, 400));
         pack();
 
+        DataLoader stock = new DataLoader();
+        stock.stockLoad();
+
         startBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Kiosk kiosk = new Kiosk();
+                Kiosk kiosk = null;
+                try {
+                    kiosk = new Kiosk();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
                 kiosk.setVisible(true);
                 setVisible(false);
             }

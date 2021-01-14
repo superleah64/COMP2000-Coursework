@@ -17,6 +17,9 @@ public class CardVerification extends JFrame {
         acceptBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                // subtract the basketcount from the stockcount and write the new stockcount back to the text file
+
                 JOptionPane.showMessageDialog(null,"Transaction complete. Your receipt will now be printed.");
                 CardThread cardThread = new CardThread();
                 cardThread.run();

@@ -44,11 +44,9 @@ public class Login extends JFrame {
 
                                 Admin admin = new Admin();
                                 admin.setVisible(true);
-                                break;
                             }
                         }
                     }
-                        //JOptionPane.showMessageDialog(null,"Username or password incorrect. Please try again.");
 
                 } catch (IndexOutOfBoundsException exception) {
 

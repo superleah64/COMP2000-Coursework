@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.text.DecimalFormat;
 
 public class CashPayment extends JFrame {
@@ -53,6 +54,7 @@ public class CashPayment extends JFrame {
 
                         // allows user to click receipt button if the cash payment was successful
                         receiptBtn.setEnabled(true);
+
                     }
                 }
                 catch(IndexOutOfBoundsException exception){
