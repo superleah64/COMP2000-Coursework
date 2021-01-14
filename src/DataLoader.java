@@ -4,8 +4,8 @@ import java.util.*;
 // a class for creating arrays and loading them into files when called
 public class DataLoader {
 
-    public static String adminPath = "src/resources/Login.txt";
-    public static String stockPath = "src/resources/stockDatabase.txt";
+    public static String adminPath = "resources/Login.txt";
+    public static String stockPath = "resources/stockDatabase.txt";
     public static String separator = "\\|";
 
     // creates arraylists for the admin and the stock
@@ -26,7 +26,7 @@ public class DataLoader {
 
     // loads the users array into the new file
     public void adminLoad() {
-        try {
+        //try {
             File file = new File(adminPath);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()){
@@ -38,9 +38,9 @@ public class DataLoader {
                 users.add(adminAccounts);
             }
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        //} catch (FileNotFoundException e) {
+            //e.printStackTrace();
+        //}
     }
 
     // loads the stock array into the new file

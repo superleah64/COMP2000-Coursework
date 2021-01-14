@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="COMP2000-Coursework:jar">
+  <artifact type="jar" name="COMP2000-Coursework:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/COMP2000_Coursework_jar</output-path>
     <root id="archive" name="COMP2000-Coursework.jar">
       <element id="module-output" name="COMP2000-Coursework" />
