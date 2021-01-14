@@ -25,15 +25,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d18119-db2d-49aa-8c40-7530d6624f0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/Login.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/stockDatabase.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/COMP2000_Coursework_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/COMP2000_Coursework_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP2000-Coursework/resources/Login.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/COMP2000-Coursework/resources/stockDatabase.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/stockDatabase.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/stockDatabase.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CashPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CashPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/Login.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/stockDatabase.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +78,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JAR Application.COMP2000-Coursework.jar">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="COMP2000-Coursework" />
@@ -100,8 +95,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="COMP2000-Coursework.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/COMP2000_Coursework_jar/COMP2000-Coursework.jar" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.COMP2000-Coursework.jar" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

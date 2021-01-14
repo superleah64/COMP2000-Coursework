@@ -26,7 +26,7 @@ public class DataLoader {
 
     // loads the users array into the new file
     public void adminLoad() {
-        //try {
+        try {
             File file = new File(adminPath);
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()){
@@ -38,9 +38,9 @@ public class DataLoader {
                 users.add(adminAccounts);
             }
 
-        //} catch (FileNotFoundException e) {
-            //e.printStackTrace();
-        //}
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     // loads the stock array into the new file
